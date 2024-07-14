@@ -11,7 +11,8 @@
 		"test": "bun run build && node --test ./dist",
 		"format": "biome format --write ./src",
 		"lint": "biome lint --write ./src",
-		"check": "biome check --write ./src"
+		"check": "biome check --write ./src",
+		"check:ci": "biome ci ./src"
 	},
 	"license": "MIT",
 	"devDependencies": {
