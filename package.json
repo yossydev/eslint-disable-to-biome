@@ -12,7 +12,8 @@
 		"format": "biome format --write ./src",
 		"lint": "biome lint --write ./src",
 		"check": "biome check --write ./src",
-		"check:ci": "biome ci ./src"
+		"check:ci": "biome ci ./src",
+		"eslint-disable-to-biome": "dist/index.js"
 	},
 	"license": "MIT",
 	"devDependencies": {
@@ -28,6 +29,6 @@
 		"ts-morph": "^23.0.0"
 	},
 	"bin": {
-		"eslint-disable-to-biome": "dist/index.js"
+		"yossydev__eslint-disable-to-biome": "dist/index.js"
 	}
 }
