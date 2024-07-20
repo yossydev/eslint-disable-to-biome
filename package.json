@@ -24,6 +24,10 @@
 	},
 	"dependencies": {
 		"commander": "^12.1.0",
+		"glob": "^11.0.0",
 		"ts-morph": "^23.0.0"
+	},
+	"bin": {
+		"eslint-disable-to-biome": "dist/index.js"
 	}
 }
