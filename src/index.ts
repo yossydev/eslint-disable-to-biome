@@ -25,10 +25,8 @@ program
 		const project = new Project();
 
 		for (const file of files) {
-			if (extensions.includes(file.split(".").pop())) {
-				const sourceFile = project.addSourceFileAtPath(file);
-				migrateExhaustiveDepsComment(sourceFile);
-			}
+			const sourceFile = project.addSourceFileAtPath(file);
+			migrateExhaustiveDepsComment(sourceFile);
 		}
 
 		console.log("Migration completed.");
