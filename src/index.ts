@@ -1,7 +1,7 @@
 import { Command } from "commander";
+import { glob } from "glob";
 import { Project } from "ts-morph";
 import { migrateExhaustiveDepsComment } from "./lib/migrate-exhaustive-deps-comment.js";
-import { glob } from "glob";
 
 const program = new Command();
 
