@@ -13,7 +13,7 @@
 		"lint": "biome lint --write ./src",
 		"check": "biome check --write ./src",
 		"check:ci": "biome ci ./src",
-		"eslint-disable-to-biome": "dist/index.js"
+		"eslint-disable-to-biome": "node dist/index.js"
 	},
 	"license": "MIT",
 	"devDependencies": {

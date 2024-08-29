@@ -1,7 +1,8 @@
 import { Command } from "commander";
-import { glob } from "glob";
+import fs from "node:fs";
 import { Project } from "ts-morph";
 import { migrateExhaustiveDepsComment } from "./lib/migrate-exhaustive-deps-comment.js";
+import { JsxEmit } from "typescript";
 
 const program = new Command();
 
@@ -19,11 +20,16 @@ program
 	.argument("[glob]", "Glob pattern to match files")
 	.action((globPattern, options) => {
 		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-		const extensions = options.ext[0].split(",").map((ext: any) => ext.trim());
-		const files = glob.sync(globPattern, { nodir: true });
+		const files = fs.readdirSync(globPattern);
 
-		const project = new Project();
+		const project = new Project({
+			tsConfigFilePath: "./tsconfig.json",
+			compilerOptions: {
+				jsx: JsxEmit.React,
+			},
+		});
 
+		console.log("files", files);
 		for (const file of files) {
 			const sourceFile = project.addSourceFileAtPath(file);
 			migrateExhaustiveDepsComment(sourceFile);

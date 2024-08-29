@@ -6,11 +6,11 @@ import "./App.css";
 function App() {
 	const [count, setCount] = useState(0);
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		if (count === 0) {
 			setCount(1);
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (
